@@ -41,34 +41,34 @@ public class RecycleViewActivity extends AppCompatActivity implements GreenAdapt
         mAdapter = new GreenAdapter(NUM_LIST_ITEMS, this);
 
         mNumbersListView.setAdapter(mAdapter);
-        mNumbersListView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//        mNumbersListView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             // 最后一个完全可见项的位置
-            private int lastCompletelyVisibleItemPosition;
-
-            @Override
-            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
-                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-                int visibleItemCount = layoutManager.getChildCount();
-                int totalItemCount = layoutManager.getItemCount();
-                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
-                    if (visibleItemCount > 0 && lastCompletelyVisibleItemPosition >= totalItemCount - 1) {
-                        Toast.makeText(RecycleViewActivity.this, "已滑动到底部!,触发loadMore", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            }
-
-            @Override
-            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
-                if (layoutManager instanceof LinearLayoutManager) {
-                    lastCompletelyVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastCompletelyVisibleItemPosition();
-                }
-                Log.d(TAG, "onScrolled: lastVisiblePosition=" + lastCompletelyVisibleItemPosition);
-            }
-        });
+//            private int lastCompletelyVisibleItemPosition;
+//
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+//                int visibleItemCount = layoutManager.getChildCount();
+//                int totalItemCount = layoutManager.getItemCount();
+//                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                    if (visibleItemCount > 0 && lastCompletelyVisibleItemPosition >= totalItemCount - 1) {
+//                        Toast.makeText(RecycleViewActivity.this, "已滑动到底部!,触发loadMore", Toast.LENGTH_SHORT).show();
+//                    }
+//                }
+//            }
+//
+//            @Override
+//            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+//                super.onScrolled(recyclerView, dx, dy);
+//                RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+//                if (layoutManager instanceof LinearLayoutManager) {
+//                    lastCompletelyVisibleItemPosition = ((LinearLayoutManager) layoutManager).findLastCompletelyVisibleItemPosition();
+//                }
+//                Log.d(TAG, "onScrolled: lastVisiblePosition=" + lastCompletelyVisibleItemPosition);
+//            }
+//        });
     }
 
     @Override

@@ -17,6 +17,7 @@ import android.util.AttributeSet;
 public class CircleImageView extends AppCompatImageView {
 
 
+    public Object set;
     private int width;
     private int height;
     private float radius;
